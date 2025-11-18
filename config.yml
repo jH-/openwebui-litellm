@@ -1,4 +1,34 @@
 model_list:
+  - model_name: gpt-5.1
+    litellm_params:
+      model: gpt-5.1
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: gpt-5.1-codex
+    litellm_params:
+      model: gpt-5.1-codex
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: gpt-5.1-codex-mini
+    litellm_params:
+      model: gpt-5.1-codex-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: gpt-5
+    litellm_params:
+      model: gpt-5
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: gpt-5-mini
+    litellm_params:
+      model: gpt-5-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: gpt-5-nano
+    litellm_params:
+      model: gpt-5-nano
+      api_key: os.environ/OPENAI_API_KEY
+
   - model_name: gpt-4.1
     litellm_params:
       model: gpt-4.1

@@ -2,6 +2,8 @@ services:
     openwebui:
         image: ghcr.io/open-webui/open-webui:cuda
         container_name: open-webui
+        networks:
+            - owui
         ports:
             - "3000:8080"
         volumes:
@@ -19,6 +21,8 @@ services:
         container_name: litellm
         # env_file:
         #     - "./.env"
+        networks:
+            - owui
         ports:
             - "4000:4000"
         volumes:
@@ -30,11 +34,14 @@ services:
             STORE_MODEL_IN_DB: "true"
             MASTER_KEY: ${MASTER_KEY}
             OPENAI_API_KEY: ${OPENAI_API_KEY}
+            ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
 
     db:
         container_name: litellm-db
         image: postgres
         restart: always
+        networks:
+            - owui
         environment:
             POSTGRES_DB: litellm
             POSTGRES_USER: llmproxy
@@ -47,3 +54,7 @@ services:
 
 volumes:
     open-webui:
+
+networks:
+  owui:
+    external: true

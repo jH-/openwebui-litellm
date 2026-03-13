@@ -1,150 +1,67 @@
 model_list:
+  - model_name: chatgpt-latest
+    litellm_params:
+      model: gpt-5.4
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2025-08-31"
+      description: "Latest GPT model from OpenAI. Best for demanding professional workflows that mix reasoning, tool use, long context, and even compute tasks"
+
+  - model_name: codex-latest
+    litellm_params:
+      model: gpt-5.3-codex
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2025-08-31"
+      description: "Latest Codex model from OpenAI. Best for agentic coding, especially longer-running software tasks where the model can use tools, iterate, and work across very large code/context windows"
+
+  - model_name: progpt-latest
+    litellm_params:
+      model: gpt-5.4-pro
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2025-08-31"
+      description: "Latest Pro model from OpenAI. Best for the hardest, high-stakes multi-step problems where maximum accuracy, stronger reasoning, and long-context performance matter more than cost or speed"
+
   - model_name: gpt-5.2
     litellm_params:
       model: gpt-5.2
-      api_key: os.environ/OPENAI_API_KEY
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2025-08-31"
+      description: "Previous flagship general-purpose model. OpenAIs intelligent model for both general and agentic tasks. Code-generation, tool calling, context mgmt, spredsheet understanding, much more"
 
   - model_name: gpt-5.2-pro
     litellm_params:
       model: gpt-5.2-pro
-      api_key: os.environ/OPENAI_API_KEY
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2025-08-31"
+      description: "Previous flagship Pro model. Produces smarter and more precise responses than the general version. Since GPT-5.2 pro is designed to tackle tough problems, some requests may take several minutes to finish"
 
-  - model_name: gpt-5.2-codex
+  - model_name: claude-sonnet-latest
     litellm_params:
-      model: gpt-5.2-codex
-      api_key: os.environ/OPENAI_API_KEY
+      model: anthropic/claude-sonnet-4-6
+      litellm_credential_name: default_claude_credential
+    model_info:
+      cutoff: "2025-08-31"
+      description: "Latest Sonnet model from Anthropic. Best for lightweight, high-speed tasks like classification, summarization, simple chat, and large-volume workflows"
 
-  - model_name: gpt-5.1
+  - model_name: claude-haiku-latest
     litellm_params:
-      model: gpt-5.1
-      api_key: os.environ/OPENAI_API_KEY
+      model: anthropic/claude-haiku-4-5-20251001
+      litellm_credential_name: default_claude_credential
+    model_info:
+      cutoff: "2025-02-28"
+      description: "Latest Haiku model from Anthropic. Best for balanced everyday use across coding, writing, and analysis when you want strong performance with faster turnaround"
 
-  - model_name: gpt-5.1-codex
+  - model_name: claude-opus-latest
     litellm_params:
-      model: gpt-5.1-codex
-      api_key: os.environ/OPENAI_API_KEY
-
-  - model_name: gpt-5.1-codex-mini
-    litellm_params:
-      model: gpt-5.1-codex-mini
-      api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: gpt-5
-  #   litellm_params:
-  #     model: gpt-5
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: gpt-5-mini
-  #   litellm_params:
-  #     model: gpt-5-mini
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: gpt-5-nano
-  #   litellm_params:
-  #     model: gpt-5-nano
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: gpt-4.1
-  #   litellm_params:
-  #     model: gpt-4.1
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: gpt-4.1-mini
-  #   litellm_params:
-  #     model: gpt-4.1-mini
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: gpt-4o
-  #   litellm_params:
-  #     model: gpt-4o
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: gpt-4o-mini
-  #   litellm_params:
-  #     model: gpt-4o-mini
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: o3
-  #   litellm_params:
-  #     model: o3
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: o3-mini
-  #   litellm_params:
-  #     model: o3-mini
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: o4-mini
-  #   litellm_params:
-  #     model: o4-mini
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: o4-mini-high
-  #   litellm_params:
-  #     model: o4-mini
-  #     reasoning_effort: high
-  #     api_key: os.environ/OPENAI_API_KEY
-
-  # - model_name: claude35-github
-  #   litellm_params:
-  #     model: openai/anthropic/claude-3-5-sonnet-20240620
-  #     api_base: https://models.github.ai/inference
-  #     api_key: os.environ/GITHUB_MODELS_PAT
-  #     custom_headers:
-  #       X-GitHub-Api-Version: "2022-11-28"
-
-  # - model_name: claude37-github
-  #   litellm_params:
-  #     model: openai/anthropic/claude-3-7-sonnet-20250219
-  #     api_base: https://models.github.ai/inference
-  #     api_key: os.environ/GITHUB_MODELS_PAT
-
-  # - model_name: github-llama3-8b-8192
-  #   litellm_params:
-  #     model: github/llama3-8b-8192
-  #     api_key: "os.environ/GITHUB_API_KEY"
-
-  # - model_name: Claude 3.5 Sonnet
-  #   litellm_params:
-  #     model: claude-3-5-sonnet-20241022
-  #     api_key: os.environ/ANTHROPIC_API_KEY
-
-  # - model_name: (OpenRouter) Llama 3.1 405B Instruct
-  #   litellm_params:
-  #     model: openrouter/meta-llama/llama-3.1-405b-instruct
-  #     api_key: os.environ/OPENROUTER_API_KEY
-  #     drop_params: true
-
-  # - model_name: (OpenRouter) Llama 3.1 Sonar Large Online
-  #   litellm_params:
-  #     model: openrouter/perplexity/llama-3.1-sonar-large-128k-online
-  #     api_key: os.environ/OPENROUTER_API_KEY
-  #     drop_params: true
-
-  # - model_name: (Groq) Llama 3.1 70B
-  #   litellm_params:
-  #     model: groq/llama-3.1-70b-versatile
-  #     api_key: os.environ/GROQ_API_KEY
-
-  # - model_name: (Groq) Llama 3.1 8B
-  #   litellm_params:
-  #     model: groq/llama-3.1-8b-instant
-  #     api_key: os.environ/GROQ_API_KEY
-
-  # - model_name: DeepSeek Coder
-  #   litellm_params:
-  #     model: deepseek/deepseek-coder
-  #     api_key: os.environ/DEEPSEEK_API_KEY
-
-  # - model_name: DeepSeek Chat
-  #   litellm_params:
-  #     model: deepseek/deepseek-chat
-  #     api_key: os.environ/DEEPSEEK_API_KEY
-
-  # - model_name: Codestral
-  #   litellm_params:
-  #     model: text-completion-codestral/codestral-latest
-  #     api_key: os.environ/CODESTRAL_API_KEY
+      model: anthropic/claude-opus-4-6
+      litellm_credential_name: default_claude_credential
+    model_info:
+      cutoff: "2025-05-31"
+      description: "Latest Opus model from Anthropic. Best for complex, high-stakes reasoning, deep analysis, and multi-step tasks where accuracy and nuance matter most"
 
 general_settings:
   master_key: os.environ/MASTER_KEY
@@ -158,3 +75,18 @@ general_settings:
 #       output_parse_pii: True
 
 litellm_settings:
+
+credential_list:
+  - credential_name: default_oai_credential
+    credential_values:
+      api_key: os.environ/OPENAI_API_KEY
+    credential_info:
+      description: "OpenAI API key from Horde org"
+      custom_llm_provider: "openai"
+
+  - credential_name: default_claude_credential
+    credential_values:
+      api_key: os.environ/ANTHROPIC_API_KEY
+    credential_info:
+      description: "Claude API key from Horde org"
+      custom_llm_provider: "anthropic"

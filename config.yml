@@ -1,10 +1,10 @@
 model_list:
   - model_name: chatgpt-latest
     litellm_params:
-      model: gpt-5.4
+      model: gpt-5.5
       litellm_credential_name: default_oai_credential
     model_info:
-      cutoff: "2025-08-31"
+      cutoff: "2025-12-01"
       description: "Latest GPT model from OpenAI. Best for demanding professional workflows that mix reasoning, tool use, long context, and even compute tasks"
 
   - model_name: codex-latest
@@ -13,25 +13,25 @@ model_list:
       litellm_credential_name: default_oai_credential
     model_info:
       cutoff: "2025-08-31"
-      description: "Latest Codex model from OpenAI. Best for agentic coding, especially longer-running software tasks where the model can use tools, iterate, and work across very large code/context windows"
+      description: "Latest standalone Codex model from OpenAI. Best for agentic coding, especially longer-running software tasks where the model can use tools, iterate, and work across very large code/context windows"
 
   - model_name: progpt-latest
     litellm_params:
-      model: gpt-5.4-pro
+      model: gpt-5.5-pro
       litellm_credential_name: default_oai_credential
     model_info:
-      cutoff: "2025-08-31"
+      cutoff: "2025-12-01"
       description: "Latest Pro model from OpenAI. Best for the hardest, high-stakes multi-step problems where maximum accuracy, stronger reasoning, and long-context performance matter more than cost or speed"
 
-  - model_name: gpt-5.2
+  - model_name: gpt-5.4
     litellm_params:
-      model: gpt-5.2
+      model: gpt-5.4
       litellm_credential_name: default_oai_credential
     model_info:
       cutoff: "2025-08-31"
       description: "Previous flagship general-purpose model. OpenAIs intelligent model for both general and agentic tasks. Code-generation, tool calling, context mgmt, spredsheet understanding, much more"
 
-  - model_name: gpt-5.2-pro
+  - model_name: gpt-5.4-pro
     litellm_params:
       model: gpt-5.2-pro
       litellm_credential_name: default_oai_credential
@@ -57,10 +57,10 @@ model_list:
 
   - model_name: claude-opus-latest
     litellm_params:
-      model: anthropic/claude-opus-4-6
+      model: anthropic/claude-opus-4-7
       litellm_credential_name: default_claude_credential
     model_info:
-      cutoff: "2025-05-31"
+      cutoff: "2026-01-31"
       description: "Latest Opus model from Anthropic. Best for complex, high-stakes reasoning, deep analysis, and multi-step tasks where accuracy and nuance matter most"
 
 general_settings:

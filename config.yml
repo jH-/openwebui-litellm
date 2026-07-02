@@ -1,75 +1,8 @@
-model_list:
-  - model_name: chatgpt-latest
-    litellm_params:
-      model: gpt-5.5
-      litellm_credential_name: default_oai_credential
-    model_info:
-      cutoff: "2025-12-01"
-      description: "Latest GPT model from OpenAI. Best for demanding professional workflows that mix reasoning, tool use, long context, and even compute tasks"
-
-  - model_name: codex-latest
-    litellm_params:
-      model: gpt-5.3-codex
-      litellm_credential_name: default_oai_credential
-    model_info:
-      cutoff: "2025-08-31"
-      description: "Latest standalone Codex model from OpenAI. Best for agentic coding, especially longer-running software tasks where the model can use tools, iterate, and work across very large code/context windows"
-
-  - model_name: progpt-latest
-    litellm_params:
-      model: gpt-5.5-pro
-      litellm_credential_name: default_oai_credential
-    model_info:
-      cutoff: "2025-12-01"
-      description: "Latest Pro model from OpenAI. Best for the hardest, high-stakes multi-step problems where maximum accuracy, stronger reasoning, and long-context performance matter more than cost or speed"
-
-  - model_name: gpt-5.4
-    litellm_params:
-      model: gpt-5.4
-      litellm_credential_name: default_oai_credential
-    model_info:
-      cutoff: "2025-08-31"
-      description: "Previous flagship general-purpose model. OpenAIs intelligent model for both general and agentic tasks. Code-generation, tool calling, context mgmt, spredsheet understanding, much more"
-
-  - model_name: gpt-5.4-pro
-    litellm_params:
-      model: gpt-5.2-pro
-      litellm_credential_name: default_oai_credential
-    model_info:
-      cutoff: "2025-08-31"
-      description: "Previous flagship Pro model. Produces smarter and more precise responses than the general version. Since GPT-5.2 pro is designed to tackle tough problems, some requests may take several minutes to finish"
-
-  - model_name: claude-sonnet
-    litellm_params:
-      model: anthropic/claude-sonnet-5
-      litellm_credential_name: default_claude_credential
-    model_info:
-      cutoff: "2025-08-31"
-      description: "Latest Sonnet model from Anthropic. Best for lightweight, high-speed tasks like classification, summarization, simple chat, and large-volume workflows"
-
-  - model_name: claude-fable
-    litellm_params:
-      model: anthropic/claude-fable-5
-      litellm_credential_name: default_claude_credential
-    model_info:
-      cutoff: "2026-01-31"
-      description: "Anthropic's next-gen model for complex knowledge work and coding, capable of sustained autonomous operation across multi-day tasks. It plans across stages, delegates to sub-agents, and self-verifies its work"
-
-  - model_name: claude-haiku
-    litellm_params:
-      model: anthropic/claude-haiku-4-5-20251001
-      litellm_credential_name: default_claude_credential
-    model_info:
-      cutoff: "2025-02-28"
-      description: "Latest Haiku model from Anthropic. Best for balanced everyday use across coding, writing, and analysis when you want strong performance with faster turnaround"
-
-  - model_name: claude-opus
-    litellm_params:
-      model: anthropic/claude-opus-4-8
-      litellm_credential_name: default_claude_credential
-    model_info:
-      cutoff: "2026-01-31"
-      description: "Latest Opus model from Anthropic. Best for complex, high-stakes reasoning, deep analysis, and multi-step tasks where accuracy and nuance matter most"
+include:
+  - configs/openai.yml
+  - configs/anthropic.yml
+  - configs/model-groups.yml
+  - configs/model-routing.yml
 
 general_settings:
   master_key: os.environ/MASTER_KEY
@@ -83,18 +16,4 @@ general_settings:
 #       output_parse_pii: True
 
 litellm_settings:
-
-credential_list:
-  - credential_name: default_oai_credential
-    credential_values:
-      api_key: os.environ/OPENAI_API_KEY
-    credential_info:
-      description: "OpenAI API key from Horde org"
-      custom_llm_provider: "openai"
-
-  - credential_name: default_claude_credential
-    credential_values:
-      api_key: os.environ/ANTHROPIC_API_KEY
-    credential_info:
-      description: "Claude API key from Horde org"
-      custom_llm_provider: "anthropic"
+  drop_params: true

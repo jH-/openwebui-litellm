@@ -1,0 +1,87 @@
+model_list:
+  ##
+  # Best capable and performing coding group; prioritizes results over cost and speed
+  ##
+
+  # - model_name: best-coding
+  #   litellm_params:
+  #     model: anthropic/claude-fable-5
+  #     litellm_credential_name: default_claude_credential
+  #     order: 1
+
+  - model_name: best-coding
+    litellm_params:
+      model: gpt-5.5
+      litellm_credential_name: default_oai_credential
+      order: 1
+
+  - model_name: best-coding
+    litellm_params:
+      model: anthropic/claude-opus-4-8
+      litellm_credential_name: default_claude_credential
+      order: 2
+
+  - model_name: best-coding
+    litellm_params:
+      model: gpt-5.3-codex
+      litellm_credential_name: default_oai_credential
+      order: 3
+
+  - model_name: best-coding
+    litellm_params:
+      model: anthropic/claude-sonnet-5
+      litellm_credential_name: default_claude_credential
+      order: 4
+
+  ##
+  # Coding group for everyday usage; best balance of output vs cost
+  ##
+
+  - model_name: everyday-coding
+    litellm_params:
+      model: gpt-5.3-codex
+      litellm_credential_name: default_oai_credential
+      order: 1
+
+  - model_name: everyday-coding
+    litellm_params:
+      model: anthropic/claude-sonnet-5
+      litellm_credential_name: default_claude_credential
+      order: 2
+
+  - model_name: everyday-coding
+    litellm_params:
+      model: gpt-5.4
+      litellm_credential_name: default_oai_credential
+      order: 3
+  
+  ##
+  # Cost optimized coding group; prioritizes usage optimization / cost per token
+  ##
+
+  - model_name: cost-optimized-coding
+    litellm_params:
+      model: anthropic/claude-haiku-4-5-20251001
+      litellm_credential_name: default_claude_credential
+      order: 1
+
+  - model_name: cost-optimized-coding
+    litellm_params:
+      model: anthropic/claude-sonnet-5
+      litellm_credential_name: default_claude_credential
+      order: 2
+
+credential_list:
+  - credential_name: default_oai_credential
+    credential_values:
+      api_key: os.environ/OPENAI_API_KEY
+    credential_info:
+      description: "OpenAI API key from Horde org"
+      custom_llm_provider: "openai"
+
+  - credential_name: default_claude_credential
+    credential_values:
+      api_key: os.environ/ANTHROPIC_API_KEY
+    credential_info:
+      description: "Claude API key from Horde org"
+      custom_llm_provider: "anthropic"

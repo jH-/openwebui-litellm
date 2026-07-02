@@ -27,6 +27,7 @@ services:
             - "4000:4000"
         volumes:
             - ./config.yml:/app/config.yaml
+            - ./configs/:/app/configs/
         command: --config /app/config.yaml --port 4000
         restart: always
         environment:

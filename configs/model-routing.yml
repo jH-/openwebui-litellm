@@ -1,0 +1,23 @@
+router_settings:
+  # fallback strategy for models not in any explicit group
+  routing_strategy: simple-shuffle
+
+  routing_groups:
+    - group_name: best-coding
+      models: [best-coding]
+      routing_strategy: simple-shuffle
+
+    - group_name: everyday-coding
+      models: [everyday-coding]
+      routing_strategy: simple-shuffle
+
+    - group_name: cheap-coding
+      models: [cost-optimized-coding]
+      routing_strategy: cost-based-routing
+
+  fallbacks:
+    - best-coding: [everyday-coding]
+    - everyday-coding: [cheap-coding]
+
+  # num_retries: 2
+  # timeout: 120

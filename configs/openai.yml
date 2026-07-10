@@ -5,7 +5,7 @@ model_list:
       litellm_credential_name: default_oai_credential
     model_info:
       cutoff: "2025-12-01"
-      description: "Latest GPT model from OpenAI. Best for demanding professional workflows that mix reasoning, tool use, long context, and even compute tasks"
+      description: "Latest balanced GPT model from OpenAI."
 
   - model_name: codex-latest
     litellm_params:
@@ -23,13 +23,45 @@ model_list:
       cutoff: "2025-12-01"
       description: "Latest Pro model from OpenAI. Best for the hardest, high-stakes multi-step problems where maximum accuracy, stronger reasoning, and long-context performance matter more than cost or speed"
 
+  - model_name: gpt-5.6-sol
+    litellm_params:
+      model: gpt-5.6-sol
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2026-02-16"
+      description: "Latest frontier model for complex professional work, reasoning and coding"
+
+  - model_name: gpt-5.6-terra
+    litellm_params:
+      model: gpt-5.6-terra
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2026-02-16"
+      description: "Latest model with a focus on balance of intelligence and cost"
+
+  - model_name: gpt-5.6-luna
+    litellm_params:
+      model: gpt-5.6-luna
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2026-02-16"
+      description: "Latest model optimized for cost-sensitive, high-volume workloads"
+
+  - model_name: gpt-5.5
+    litellm_params:
+      model: gpt-5.5
+      litellm_credential_name: default_oai_credential
+    model_info:
+      cutoff: "2025-12-01"
+      description: "Previous flagship GPT model from OpenAI. Best for demanding professional workflows that mix reasoning, tool use, long context, and even compute tasks"
+
   - model_name: gpt-5.4
     litellm_params:
       model: gpt-5.4
       litellm_credential_name: default_oai_credential
     model_info:
       cutoff: "2025-08-31"
-      description: "Previous flagship general-purpose model. OpenAIs intelligent model for both general and agentic tasks. Code-generation, tool calling, context mgmt, spredsheet understanding, much more"
+      description: "Previous general-purpose model. OpenAIs intelligent model for both general and agentic tasks. Code-generation, tool calling, context mgmt, spredsheet understanding, much more"
 
   - model_name: gpt-5.4-pro
     litellm_params:
